@@ -21,8 +21,8 @@ class ExampleApplication {
         return router {
             "/api".nest {
                 "/books".nest {
-                    GET("", bookController::listBooks)
                     accept(MediaType.APPLICATION_JSON_UTF8).nest {
+                        GET("", bookController::listBooks)
                         POST("", bookController::addBook)
                     }
                 }
